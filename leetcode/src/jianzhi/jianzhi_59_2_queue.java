@@ -1,5 +1,9 @@
 package jianzhi;
 
+import java.util.Collections;
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class jianzhi_59_2_queue {
     class MaxQueue {
         Queue<Integer> queue;
