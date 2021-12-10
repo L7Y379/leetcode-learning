@@ -1,3 +1,0 @@
-char[] charArray = s.toCharArray();
-
-Arrays.sort(nums);
