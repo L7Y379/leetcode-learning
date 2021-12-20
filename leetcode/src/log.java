@@ -29,5 +29,12 @@ public class log {
         stack.push(6);
         stack.pop();
         int prev = stack.peek();
+
+        //字符串操作
+        StringBuilder cur=new StringBuilder();
+        cur.append("s");
+        cur.deleteCharAt(cur.length()-1);
+        cur.toString();
+
     }
 }
