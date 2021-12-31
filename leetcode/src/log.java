@@ -11,6 +11,8 @@ public class log {
 
         //数组排序
         //Arrays.sort(nums);
+        //获取数组intersection的从0到index的元素构建新的数组
+        //int result=Arrays.copyOfRange(intersection, 0, index);
 
         //字符串转整形
         String digits='1'+"";
@@ -27,6 +29,10 @@ public class log {
         //找到map哈希表中键为key的值list，否则创建一个新的list
         //List<String> list = map.getOrDefault(key, new ArrayList<String>());
 
+        //哈希集合
+        Set set =new HashSet();
+        set.add(22);
+        if(set.contains(33)){};
 
         //栈的定义与使用
         Deque<Integer> stack = new LinkedList<Integer>();
