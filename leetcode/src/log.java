@@ -8,6 +8,12 @@ public class log {
         //char[] charArray = s.toCharArray();
         //对字符串数组排序
         //Arrays.sort(charArray);
+        //对二维数组排序，升序
+        //Arrays.sort(intervals, new Comparator<int[]>() {
+        //                public int compare(int[] interval1, int[] interval2) {
+        //                    return interval1[0] - interval2[0];
+        //                }
+        //            });
 
         //数组排序
         //Arrays.sort(nums);
@@ -59,5 +65,8 @@ public class log {
         list2.add(22);
         list2.add(33);
         Integer[] animals2=list2.toArray(new Integer[0]);
+        //将二维数组list转换为数组
+        List<int[]> merged = new ArrayList<int[]>();
+        int[][] hhh=merged.toArray(new int[merged.size()][]);
     }
 }
