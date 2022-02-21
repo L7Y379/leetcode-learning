@@ -68,5 +68,11 @@ public class log {
         //将二维数组list转换为数组
         List<int[]> merged = new ArrayList<int[]>();
         int[][] hhh=merged.toArray(new int[merged.size()][]);
+
+
+        //列表操作
+        Queue<Integer> q = new LinkedList<Integer>();
+        q.add(5);
+        Integer a =q.poll();
     }
 }
