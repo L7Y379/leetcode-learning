@@ -32,6 +32,8 @@ public class log {
             put('2', "abc");
             put('3', "def");
         }};
+        //containsKey
+        //containsValue(Object value)
         //找到map哈希表中键为key的值list，否则创建一个新的list
         //List<String> list = map.getOrDefault(key, new ArrayList<String>());
 
