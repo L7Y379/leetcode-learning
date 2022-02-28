@@ -32,6 +32,13 @@ public class log {
             put('2', "abc");
             put('3', "def");
         }};
+        //遍历
+        for(Map.Entry<Character, String> entry : phoneMap.entrySet()){
+            if(entry.getValue()=="sss"){
+                char result=entry.getKey();
+            }
+            System.out.println("key = " + entry.getKey() + ", value = " + entry.getValue());
+        }
         //containsKey
         //containsValue(Object value)
         //找到map哈希表中键为key的值list，否则创建一个新的list
