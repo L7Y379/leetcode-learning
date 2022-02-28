@@ -19,7 +19,8 @@ public class log {
         //Arrays.sort(nums);
         //获取数组intersection的从0到index的元素构建新的数组
         //int result=Arrays.copyOfRange(intersection, 0, index);
-
+        //字符串取字串
+        //s.substring(i,j)
         //字符串转整形
         String digits='1'+"";
         int num = Integer.parseInt(digits);
