@@ -78,6 +78,8 @@ public class log {
         //将二维数组list转换为数组
         List<int[]> merged = new ArrayList<int[]>();
         int[][] hhh=merged.toArray(new int[merged.size()][]);
+        //LIST排序
+        Collections.sort(list);
 
 
         //列表操作
