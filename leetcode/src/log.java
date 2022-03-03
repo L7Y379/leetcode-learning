@@ -24,7 +24,8 @@ public class log {
         //字符串转整形
         String digits='1'+"";
         int num = Integer.parseInt(digits);
-
+        int i = (new Integer(10)).intValue();   // intValue()拆箱
+        Integer integer = Integer.valueOf(i);   // valueOf()装箱
         //字符串加整形
         char t=(char)('a'+5);
 
@@ -74,7 +75,9 @@ public class log {
         list2.add(55);
         list2.add(22);
         list2.add(33);
-        Integer[] animals2=list2.toArray(new Integer[0]);
+        //数组转为list
+        Integer[] arr2 = {1, 2, 3};
+        List<Integer> lists2 = Arrays.asList(arr2);
         //将二维数组list转换为数组
         List<int[]> merged = new ArrayList<int[]>();
         int[][] hhh=merged.toArray(new int[merged.size()][]);

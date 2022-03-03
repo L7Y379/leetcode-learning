@@ -16,21 +16,28 @@ public class hot_160相交链表_set {
      * }
      */
     public class Solution {
-        // public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
-        //     ListNode pa=headA;
-        //     ListNode pb=headB;
-        //     while(pa!=pb){
-        //         pa=pa.next;
-        //         pb=pb.next;
-        //         if(pa==null){
-        //             pa=headB;
-        //         }
-        //         if(pb==null){
-        //             pb=headA;
-        //         }
-        //     }
-        //     return pa;
-        // }
+//        public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
+//            if(headB==null||headA==null){
+//                return null;
+//            }
+//            ListNode pa=headA;
+//            ListNode pb=headB;
+//            while(pa!=pb){
+//                pa=pa.next;
+//                pb=pb.next;
+//                if(pa==null&&pb!=null){
+//                    pa=headB;
+//                }
+//                if(pb==null&&pa!=null){
+//                    pb=headA;
+//                }
+//                if(pa==null&&pb==null){
+//                    return null;
+//                }
+//
+//            }
+//            return pa;
+//        }
         public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
             Set<ListNode> set_A=new HashSet<ListNode>();
             while(headA!=null){
