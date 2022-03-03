@@ -80,6 +80,8 @@ public class log {
         int[][] hhh=merged.toArray(new int[merged.size()][]);
         //LIST排序
         Collections.sort(list);
+        //list最小值
+        Collections.min(list);
 
 
         //列表操作
