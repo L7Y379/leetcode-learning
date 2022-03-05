@@ -34,6 +34,10 @@ public class log {
             put('2', "abc");
             put('3', "def");
         }};
+        phoneMap.remove('2');
+        if(phoneMap.isEmpty()){
+
+        }
         //遍历
         for(Map.Entry<Character, String> entry : phoneMap.entrySet()){
             if(entry.getValue()=="sss"){
