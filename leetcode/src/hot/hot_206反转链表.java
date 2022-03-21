@@ -30,15 +30,29 @@ public class hot_206反转链表 {
             // p.next=null;
             // return result;
 
+//            if(head==null){
+//                return null;
+//            }
+//            ListNode p=new ListNode(head.val);
+//            head=head.next;
+//            while(head!=null){
+//                ListNode q=new ListNode(head.val,p);
+//                head=head.next;
+//                p=q;
+//            }
+//            return p;
+
             if(head==null){
                 return null;
             }
-            ListNode p=new ListNode(head.val);
-            head=head.next;
-            while(head!=null){
-                ListNode q=new ListNode(head.val,p);
-                head=head.next;
+            ListNode p=head;
+            ListNode q=p.next;
+            p.next=null;
+            while(q!=null){
+                ListNode t=q.next;
+                q.next=p;
                 p=q;
+                q=t;
             }
             return p;
         }
