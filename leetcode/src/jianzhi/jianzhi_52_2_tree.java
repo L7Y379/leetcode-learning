@@ -10,6 +10,7 @@ public class jianzhi_52_2_tree {
      *     TreeNode(int x) { val = x; }
      * }
      */
+    
     class Solution {
         public boolean isBalanced(TreeNode root) {
             if(root==null){
