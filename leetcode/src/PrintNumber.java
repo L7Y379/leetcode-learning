@@ -41,7 +41,6 @@ public class PrintNumber {
             Thread.sleep(10);
             // 保证线程按序进入wait状态，HotSpot虚拟机中，线程时按序唤醒的。
         }
-
         PrintThread.beginPrint();
     }
 }
