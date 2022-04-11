@@ -45,15 +45,33 @@ public class log {
             }
             System.out.println("key = " + entry.getKey() + ", value = " + entry.getValue());
         }
+        Iterator<Character> ite=phoneMap.keySet().iterator();
+        while (ite.hasNext()){
+            char a= ite.next();
+            System.out.println(phoneMap.get(a));
+        }
+        Iterator<Map.Entry<Character,String>> ite2=phoneMap.entrySet().iterator();
+        while (ite2.hasNext()){
+            Map.Entry<Character,String> entry=ite2.next();
+            System.out.println(entry.getKey());
+            System.out.println(entry.getValue());
+
+        }
+
         //containsKey
         //containsValue(Object value)
         //找到map哈希表中键为key的值list，否则创建一个新的list
         //List<String> list = map.getOrDefault(key, new ArrayList<String>());
 
         //哈希集合
-        Set set =new HashSet();
+        Set<Integer> set =new HashSet();
         set.add(22);
         if(set.contains(33)){};
+        Iterator<Integer> ite3= set.iterator();
+        while(ite3.hasNext()){
+            int number=ite3.next();
+            System.out.println(number);
+        }
 
         //栈的定义与使用
         Deque<Integer> stack = new LinkedList<Integer>();
