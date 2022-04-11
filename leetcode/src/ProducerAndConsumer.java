@@ -38,7 +38,7 @@ class GoodsShelf{
             }
         }
         //商品放入货架
-        //iphones[count] = iphone;
+        iphones[count] = iphone;
         //商品数量加1
         count++;
         //通知消费者可以消费了
@@ -74,7 +74,7 @@ class Producer implements Runnable{
         for (int i = 0; i < 100; i++) {
             try {
                 //睡眠0.01秒方便观察。睡眠不释放锁
-                Thread.sleep(10);
+                Thread.sleep(0);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
@@ -95,7 +95,7 @@ class Consumer implements Runnable{
         for (int i = 0; i < 100; i++) {
             try {
                 //睡眠
-                Thread.sleep(10);
+                Thread.sleep(0);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

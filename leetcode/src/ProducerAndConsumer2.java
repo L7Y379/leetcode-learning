@@ -1,74 +1,85 @@
-public class ProducerAndConsumer2 {
-
+public class ProducerAndConsumer2{
     public static void main(String[] args) {
-        IPhone iPhone = new IPhone();
-        new PhoneConsumer(iPhone).start();
-        new PhoneProducer(iPhone).start();
+        Factory factory=new Factory(10);
+
+        xiaofei xf=new xiaofei(factory);
+        shengchan sc=new shengchan(factory);
+        new Thread(sc).start();
+        new Thread(xf).start();
+
     }
 }
+class cake{
+    int number;
+    public cake(int number){
+        this.number=number;
+    }
+}
+class Factory{
+    int len;
+    int now=0;
+    cake[] arr;
+    public Factory(int len){
+        this.len=len;
+        arr=new cake[len];
+    }
+    public synchronized void create(cake c) throws InterruptedException {
+        if(now==len){
+            System.out.println("=============货架已满============");
+            this.wait();
+        }
+        arr[now]=c;
+        now++;
+        this.notifyAll();
+    }
+    public synchronized cake eat() throws InterruptedException{
+        if(now==0){
+            System.out.println("=============货架没有商品了============");
+            this.wait();
+        }
 
-//操作的对象
-class IPhone{
-    private int number;
-    //标志变量
-    boolean flag = true;
+        now--;
+        this.notifyAll();
+        cake take=arr[now];
+        arr[now]=null;
+        return take;
+    }
+}
+class xiaofei implements Runnable{
 
-    public synchronized void makeAPhone(int number){
-        if (!flag){
+    public final Factory factory;
+    public xiaofei(Factory factory){
+        this.factory=factory;
+    }
+    @Override
+    public void run() {
+        for(int i=0;i<100;i++) {
             try {
-                //等待消费者消费
-                this.wait();
+                cake cc=factory.eat();
+
+                System.out.println("消费了"+cc.number+"蛋糕");
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
-        this.number = number;
-        System.out.println("+生产了"+number+"号手机");
-        //修改标志变量，并通知消费者消费
-        this.flag = !this.flag;
-        this.notifyAll();
-    }
 
-    public synchronized void sellAPhone(){
-        if (flag){
+    }
+}
+class shengchan implements Runnable{
+    public final Factory factory;
+    public shengchan(Factory factory){
+        this.factory=factory;
+    }
+    @Override
+    public void run() {
+        for(int i=0;i<100;i++){
+            cake c=new cake(i);
             try {
-                //等待生产者生产
-                this.wait();
+                factory.create(c);
+                System.out.println("生产了"+i+"蛋糕");
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-        }
-        System.out.println("-卖出了"+number+"号手机");
-        //修改标志变量，并通知生产者生产
-        this.flag = !this.flag;
-        this.notifyAll();
-    }
-}
-//生产者
-class PhoneProducer extends Thread{
-
-    IPhone iPhone;
-    public PhoneProducer(IPhone iPhone){
-        this.iPhone = iPhone;
-    }
-
-    @Override
-    public void run() {
-        for (int i = 0; i < 100; i++) {
-            iPhone.makeAPhone(i);
-        }
-    }
-}
-//消费者
-class PhoneConsumer extends Thread{
-    IPhone iPhone;
-    public PhoneConsumer(IPhone iPhone){
-        this.iPhone = iPhone;
-    }
-    @Override
-    public void run() {
-        for (int i = 0; i < 100; i++) {
-            iPhone.sellAPhone();
         }
     }
 }
