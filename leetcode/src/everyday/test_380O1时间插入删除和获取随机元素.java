@@ -1,5 +1,6 @@
 package everyday;
 
+import java.lang.reflect.InvocationTargetException;
 import java.util.*;
 
 public class test_380O1时间插入删除和获取随机元素 {
@@ -8,6 +9,7 @@ class RandomizedSet {
     List<Integer> nums;
     Map<Integer, Integer> indices;
     Random random;
+    Iterator<Map.Entry<Integer,Integer>> ite=indices.entrySet().iterator();
 
     public RandomizedSet() {
         nums = new ArrayList<Integer>();
