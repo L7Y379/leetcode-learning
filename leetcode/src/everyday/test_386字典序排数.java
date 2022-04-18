@@ -1,9 +1,6 @@
 package everyday;
 
-import java.util.ArrayList;
-import java.util.Comparator;
-import java.util.List;
-import java.util.PriorityQueue;
+import java.util.*;
 
 public class test_386字典序排数 {
     public static void main(String[] args) {
@@ -18,7 +15,7 @@ public class test_386字典序排数 {
 //        System.out.println(c.compareTo(d));
         PriorityQueue<Integer> pq=new PriorityQueue<>(new Comparator<Integer>() {
             @Override
-            public int compare(Integer o1, Integer o2) {
+            public int compare(Integer o2, Integer o1) {
                 return o1.toString().compareTo(o2.toString());
             }
         });
@@ -29,6 +26,9 @@ public class test_386字典序排数 {
         for(int i=1;i<=n;i++){
             result.add(pq.poll());
         }
+        System.out.println(result);
+        Collections.sort(result,(a,b)-> a.toString().compareTo(b.toString()));
         return result;
+
     }
 }
