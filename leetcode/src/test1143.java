@@ -18,6 +18,10 @@ public class test1143 {
     public static void main(String[] args){
         int result=longestCommonSubsequence("asfawfasfasf","segqasewfawsg");
         System.out.println(result);
+
+        System.out.println((int)Math.pow(2,31)-1);
+
+        //System.out.println(4294967293);
     }
 
 }
