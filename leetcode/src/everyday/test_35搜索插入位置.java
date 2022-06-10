@@ -1,6 +1,6 @@
-package everyday;
-
-public class test_35搜索插入位置 {
+package everyday;public class test_35搜索插入位置 {
+}
+class Solution {
     public int searchInsert(int[] nums, int target) {
         int i=0;
         int j=nums.length-1;
