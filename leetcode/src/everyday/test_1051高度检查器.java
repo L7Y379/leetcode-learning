@@ -1,6 +1,8 @@
 package everyday;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class test_1051高度检查器 {
     public int heightChecker(int[] heights) {
