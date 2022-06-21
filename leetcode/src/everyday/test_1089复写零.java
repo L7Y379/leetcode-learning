@@ -23,4 +23,9 @@ public class test_1089复写零 {
         }
 
     }
+    public String reverseLeftWords(String s, int n) {
+        String s1=s.substring(0,n);
+        String s2=s.substring(n,s.length()-1);
+        return s2+s1;
+    }
 }
