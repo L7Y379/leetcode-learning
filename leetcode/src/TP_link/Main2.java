@@ -10,6 +10,6 @@ public class Main2 {
         int lenb=bs.length();
         char c='0';
         int lenall=Math.max(lena,lenb);
-
+        return 0;
     }
 }
